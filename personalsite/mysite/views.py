@@ -1,6 +1,6 @@
 import json
 
-import requests
+#import requests
 from django.shortcuts import render
 
 from .models import Contact
@@ -11,21 +11,11 @@ def index(request):
         firstname = request.POST.get('fname')
         lastname = request.POST.get('lname')
 
-        r = requests.get('http://api.icndb.com/jokes/random?firstName=' + firstname + '&lastName=' + lastname)
-        json_data = json.loads(r.text)
-        joke = json_data.get('value').get('joke')
-
-        context = {'joker': joke}
         return render(request, 'mysite/index.html', context)
     else:
-        firstname = 'Attreya'
-        lastname = 'Bhatt'
+        firstname = 'Jordan'
+        lastname = 'Graves'
 
-        r = requests.get('http://api.icndb.com/jokes/random?firstName=' + firstname + '&lastName=' + lastname)
-        json_data = json.loads(r.text)
-        joke = json_data.get('value').get('joke')
-
-        context = {'joker': joke}
         return render(request, 'mysite/index.html', context)
 
 
