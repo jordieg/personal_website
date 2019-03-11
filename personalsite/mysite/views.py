@@ -7,21 +7,15 @@ from .models import Contact
 
 
 def index(request):
-    if request.method == 'POST':
-        firstname = request.POST.get('fname')
-        lastname = request.POST.get('lname')
+    firstname = 'Jordan'
+    lastname = 'Graves'
 
-        context = {
-            'firstname': firstname,
-            'lastname' : lastname,
-         }
+    context = {
+        'firstname': firstname,
+        'lastname' : lastname,
+    }
 
-        return render(request, 'mysite/index.html', context=context)
-    # else:
-    #     firstname = 'Jordan'
-    #     lastname = 'Graves'
-
-    #     return render(request, 'mysite/index.html', context=context)
+    return render(request, 'mysite/index.html', context=context)
 
 
 def portfolio(request):
@@ -40,6 +34,51 @@ def contact(request):
         return render(request, 'mysite/thank.html')
     else:
         return render(request, 'mysite/contact.html')
+
+
+
+# import json
+
+# #import requests
+# from django.shortcuts import render
+
+# from .models import Contact
+
+
+# def index(request):
+#     if request.method == 'POST':
+#         firstname = request.POST.get('fname')
+#         lastname = request.POST.get('lname')
+
+#         context = {
+#             'firstname': firstname,
+#             'lastname' : lastname,
+#          }
+
+#         return render(request, 'mysite/index.html', context=context)
+#     # else:
+#     #     firstname = 'Jordan'
+#     #     lastname = 'Graves'
+
+#     #     return render(request, 'mysite/index.html', context=context)
+
+
+# def portfolio(request):
+#     return render(request, 'mysite/portfolio.html')
+
+
+# def contact(request):
+#     if request.method == 'POST':
+#         email_r = request.POST.get('email')
+#         subject_r = request.POST.get('subject')
+#         message_r = request.POST.get('message')
+
+#         c = Contact(email=email_r, subject=subject_r, message=message_r)
+#         c.save()
+
+#         return render(request, 'mysite/thank.html')
+#     else:
+#         return render(request, 'mysite/contact.html')
 
 
 
