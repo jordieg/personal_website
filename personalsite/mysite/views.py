@@ -11,12 +11,17 @@ def index(request):
         firstname = request.POST.get('fname')
         lastname = request.POST.get('lname')
 
-        return render(request, 'mysite/index.html', context)
-    else:
-        firstname = 'Jordan'
-        lastname = 'Graves'
+        context = {
+            'firstname': firstname,
+            'lastname' : lastname,
+         }
 
-        return render(request, 'mysite/index.html', context)
+        return render(request, 'mysite/index.html', context=context)
+    # else:
+    #     firstname = 'Jordan'
+    #     lastname = 'Graves'
+
+    #     return render(request, 'mysite/index.html', context=context)
 
 
 def portfolio(request):
