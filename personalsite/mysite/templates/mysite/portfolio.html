@@ -1,0 +1,39 @@
+{% extends 'mysite/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container" style="margin-top: 100px">
+        <div class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'mysite/images/image1.png' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Insert name</h5>
+                    <p class="card-text">Describe project.</p>
+                    <p class="card-text">
+                        <small class="text-muted">link project, etc</small>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'mysite/images/image1.png' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Insert name</h5>
+                    <p class="card-text">Describe project.</p>
+                    <p class="card-text">
+                        <small class="text-muted">link project, etc</small>
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'mysite/images/image1.png' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Insert Name</h5>
+                    <p class="card-text">SDescribe project.</p>
+                    <p class="card-text">
+                        <small class="text-muted">link project, etc</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
